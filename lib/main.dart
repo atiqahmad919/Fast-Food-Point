@@ -1,10 +1,7 @@
-import 'package:fds2/pages/login_page.dart';
-import 'package:fds2/pages/register_page.dart';
+import 'package:fds2/pages/home_page.dart';
 import 'package:fds2/themes/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
-import 'auth/login_or_register.dart';
 
 void main() {
   runApp(
@@ -22,7 +19,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const LoginOrRegister(),
+      // home: const LoginOrRegister(),
+      home: const HomePage(),
       theme: Provider.of<ThemeProvider>(context).themeData,
     );
   }
