@@ -1,3 +1,4 @@
+import 'package:fds2/models/restaurant.dart';
 import 'package:fds2/pages/home_page.dart';
 import 'package:fds2/themes/theme_provider.dart';
 import 'package:flutter/material.dart';
@@ -5,8 +6,11 @@ import 'package:provider/provider.dart';
 
 void main() {
   runApp(
-    ChangeNotifierProvider(
-      create: (context) => ThemeProvider(),
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => ThemeProvider()),
+        ChangeNotifierProvider(create: (context) => Restaurant()),
+      ],
       child: const MyApp(),
     ),
   );
