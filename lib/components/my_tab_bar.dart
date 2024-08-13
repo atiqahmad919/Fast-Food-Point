@@ -14,6 +14,8 @@ class MyTabBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TabBar(
+      // padding: EdgeInsets.zero,
+      isScrollable: true,
       controller: tabController,
       tabs: _buildCategoryTabs(),
     );
