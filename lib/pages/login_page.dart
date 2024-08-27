@@ -45,7 +45,7 @@ class _LoginPageState extends State<LoginPage> {
           ),
           const SizedBox(height: 25),
           Text(
-            "Food Delivery App",
+            "Fast Delivery Service",
             style: TextStyle(
                 fontSize: 16,
                 color: Theme.of(context).colorScheme.inversePrimary),

@@ -116,7 +116,7 @@ class _FoodPageState extends State<FoodPage> {
           child: Opacity(
             opacity: 0.5,
             child: Container(
-              margin: EdgeInsets.only(left: 25),
+              margin: const EdgeInsets.only(left: 25),
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: Theme.of(context).colorScheme.secondary,
