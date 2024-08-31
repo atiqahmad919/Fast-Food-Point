@@ -28,9 +28,9 @@ class QuantitySelector extends StatelessWidget {
         // mainAxisSize: MainAxisSize.min,
         children: [
           GestureDetector(
-            onTap: onDeccrement,
+            onTap: onIncrement,
             child: Icon(
-              Icons.arrow_circle_up_sharp,
+              Icons.add_circle,
               size: 35,
               color: Theme.of(context).colorScheme.primary,
             ),
@@ -45,9 +45,9 @@ class QuantitySelector extends StatelessWidget {
             ),
           ),
           GestureDetector(
-            onTap: onIncrement,
+            onTap: onDeccrement,
             child: Icon(
-              Icons.arrow_circle_down_sharp,
+              Icons.remove_circle_outline,
               size: 35,
               color: Theme.of(context).colorScheme.primary,
             ),
