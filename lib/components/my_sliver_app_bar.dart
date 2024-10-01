@@ -21,54 +21,57 @@ class MySliverAppBar extends StatelessWidget {
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => const CartPage()));
           },
-          child: Stack(
-            children: [
-              IconButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const CartPage()));
-                },
-                icon: const Icon(
-                  Icons.shopping_cart,
-                  size: 25,
+          child: Padding(
+            padding: const EdgeInsets.only(right: 20.0, top: 10),
+            child: Stack(
+              children: [
+                IconButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const CartPage()));
+                  },
+                  icon: const Icon(
+                    Icons.shopping_cart,
+                    size: 25,
+                  ),
                 ),
-              ),
-              // Badge overlay
-              Consumer<Restaurant>(
-                builder: (context, restaurant, child) {
-                  int itemCount =
-                      restaurant.getTotalItemCount(); // Get the cart item count
-                  return itemCount > 0
-                      ? Positioned(
-                          right: 0,
-                          top: 0,
-                          child: Container(
-                            padding: const EdgeInsets.all(4),
-                            decoration: const BoxDecoration(
-                              color: Colors.red,
-                              shape: BoxShape.circle,
-                            ),
-                            constraints: const BoxConstraints(
-                              minWidth: 15,
-                              minHeight: 15,
-                            ),
-                            child: Text(
-                              '$itemCount',
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 12,
-                                fontWeight: FontWeight.bold,
+                // Badge overlay
+                Consumer<Restaurant>(
+                  builder: (context, restaurant, child) {
+                    int itemCount = restaurant
+                        .getTotalItemCount(); // Get the cart item count
+                    return itemCount > 0
+                        ? Positioned(
+                            right: 0,
+                            top: 0,
+                            child: Container(
+                              padding: const EdgeInsets.all(4),
+                              decoration: const BoxDecoration(
+                                color: Colors.red,
+                                shape: BoxShape.circle,
                               ),
-                              textAlign: TextAlign.center,
+                              constraints: const BoxConstraints(
+                                minWidth: 15,
+                                minHeight: 15,
+                              ),
+                              child: Text(
+                                '$itemCount',
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
                             ),
-                          ),
-                        )
-                      : const SizedBox(); // Show nothing if no items in cart
-                },
-              ),
-            ],
+                          )
+                        : const SizedBox(); // Show nothing if no items in cart
+                  },
+                ),
+              ],
+            ),
           ),
         ),
       ],
