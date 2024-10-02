@@ -1,3 +1,4 @@
+import 'package:fds2/components/constants.dart';
 import 'package:fds2/components/my_quantity_selector.dart';
 import 'package:fds2/models/restaurant.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +14,7 @@ class MyCartTile extends StatelessWidget {
     return Consumer<Restaurant>(
       builder: (context, restaurant, child) => Container(
         decoration: BoxDecoration(
+          border: Border.all(color: kSecondary),
           color: Theme.of(context).colorScheme.secondary, // make it secondary
           borderRadius: BorderRadius.circular(8),
         ),
@@ -41,7 +43,7 @@ class MyCartTile extends StatelessWidget {
                       children: [
                         Text(cartItem.food.name),
                         Text(
-                          '\$${cartItem.food.price.toString()}',
+                          'Rs.${cartItem.food.price.toString()}',
                           style: TextStyle(
                               color: Theme.of(context).colorScheme.primary),
                         ),

@@ -51,7 +51,7 @@ class _FoodPageState extends State<FoodPage> {
                             fontWeight: FontWeight.bold, fontSize: 20),
                       ),
                       Text(
-                        '\$${widget.food.price}',
+                        'Rs.${widget.food.price}',
                         style: TextStyle(
                             fontSize: 16,
                             color: Theme.of(context).colorScheme.primary),
@@ -87,7 +87,7 @@ class _FoodPageState extends State<FoodPage> {
                               return CheckboxListTile(
                                   title: Text(addon.name),
                                   subtitle: Text(
-                                    '\$${addon.price}',
+                                    'Rs.${addon.price}',
                                     style: TextStyle(
                                         color: Theme.of(context)
                                             .colorScheme

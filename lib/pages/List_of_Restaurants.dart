@@ -101,80 +101,88 @@ class RestaurantListScreen extends StatelessWidget {
         centerTitle: true,
         iconTheme: const IconThemeData(color: kWhite),
         backgroundColor: kPrimary,
+        // backgroundColor: kWhite,
         title: const Text(
           'Restaurants',
           style: TextStyle(color: kWhite),
         ),
       ),
       body: ListView.builder(
+        // itemExtent: 180,
+        // shrinkWrap: true,
+        // padding: const EdgeInsets.symmetric(horizontal: 10),
         itemCount: restaurants.length,
         itemBuilder: (context, index) {
           final restaurant = restaurants[index];
-          return GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const HomePage(
-                      // imageUrl: restaurant['imageUrl'],
-                      // name: restaurant['name'],
-                      // menuCategories:
-                      //     List<String>.from(restaurant['menuCategories']),
-                      ),
+          return Padding(
+            padding: const EdgeInsets.only(top: 8.0, left: 6, right: 6),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const HomePage(
+                        // imageUrl: restaurant['imageUrl'],
+                        // name: restaurant['name'],
+                        // menuCategories:
+                        //     List<String>.from(restaurant['menuCategories']),
+                        ),
+                  ),
+                );
+              },
+              child: Card(
+                color: kWhite,
+                elevation: 4.0,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10.0),
                 ),
-              );
-            },
-            child: Card(
-              elevation: 4.0,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10.0),
-              ),
-              child: SizedBox(
-                height: 130,
-                child: Row(
-                  children: [
-                    Expanded(
-                      flex: 2,
-                      child: ClipRRect(
-                        borderRadius: const BorderRadius.only(
-                          topLeft: Radius.circular(10.0),
-                          bottomLeft: Radius.circular(10.0),
-                        ),
-                        child: Image.asset(
-                          restaurant['imageUrl'],
-                          fit: BoxFit.cover,
-                          height: double.infinity,
+                child: SizedBox(
+                  height: 130,
+                  child: Row(
+                    children: [
+                      Expanded(
+                        flex: 2,
+                        child: ClipRRect(
+                          borderRadius: const BorderRadius.only(
+                            topLeft: Radius.circular(10.0),
+                            bottomLeft: Radius.circular(10.0),
+                          ),
+                          child: Image.asset(
+                            restaurant['imageUrl'],
+                            fit: BoxFit.cover,
+                            height: double.infinity,
+                          ),
                         ),
                       ),
-                    ),
-                    Expanded(
-                      flex: 3,
-                      child: Padding(
-                        padding: const EdgeInsets.all(16.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              restaurant['name'],
-                              style: const TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
+                      Expanded(
+                        flex: 3,
+                        child: Padding(
+                          padding: const EdgeInsets.all(16.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                restaurant['name'],
+                                style: const TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
-                            ),
-                            const SizedBox(height: 8),
-                            Text(
-                              'Description of ${restaurant['name']}',
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.grey[600],
+                              const SizedBox(height: 8),
+                              Text(
+                                'Description of ${restaurant['name']}',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.grey[600],
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),

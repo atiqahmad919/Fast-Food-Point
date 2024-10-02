@@ -1,3 +1,6 @@
+import 'dart:ui';
+
+import 'package:fds2/components/constants.dart';
 import 'package:fds2/components/my_current_location.dart';
 import 'package:fds2/components/my_description_box.dart';
 import 'package:fds2/components/my_drawer.dart';
@@ -77,8 +80,15 @@ class _HomePageState extends State<HomePage>
                         endIndent: 25,
                         color: Theme.of(context).colorScheme.secondary,
                       ),
-                      const MyCurrentLocation(),
-                      const MyDescriptionBox(),
+                      const Text(
+                        'FDS',
+                        style: TextStyle(
+                            fontSize: 120,
+                            color: kPrimary,
+                            fontStyle: FontStyle.italic),
+                      )
+                      // const MyCurrentLocation(),
+                      // const MyDescriptionBox(),
                     ],
                   ),
                 ),

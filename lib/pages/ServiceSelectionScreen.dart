@@ -12,7 +12,7 @@ class ServiceSelectionScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: kSecondary,
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
             height: 150,
@@ -45,52 +45,52 @@ class ServiceSelectionScreen extends StatelessWidget {
               ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(bottom: 200),
-            child: Column(
-              children: [
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => RestaurantListScreen(),
-                      ),
-                    );
-                  },
-                  child: const HomePageCard(
-                      cardTitle: 'Food',
-                      imagePath: 'images/ServicesIcons/icon_food.png'),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const ComingSoon(),
-                      ),
-                    );
-                  },
-                  child: const HomePageCard(
-                      cardTitle: 'General',
-                      imagePath: 'images/ServicesIcons/icon_general.png'),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const ComingSoon(),
-                      ),
-                    );
-                  },
-                  child: const HomePageCard(
-                      cardTitle: 'Sawari',
-                      imagePath: 'images/ServicesIcons/icon_sawari.png'),
-                ),
-              ],
-            ),
+          const Spacer(),
+          Column(
+            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => RestaurantListScreen(),
+                    ),
+                  );
+                },
+                child: const HomePageCard(
+                    cardTitle: 'Food',
+                    imagePath: 'images/ServicesIcons/icon_food.png'),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ComingSoon(),
+                    ),
+                  );
+                },
+                child: const HomePageCard(
+                    cardTitle: 'General',
+                    imagePath: 'images/ServicesIcons/icon_general.png'),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ComingSoon(),
+                    ),
+                  );
+                },
+                child: const HomePageCard(
+                    cardTitle: 'Sawari',
+                    imagePath: 'images/ServicesIcons/icon_sawari.png'),
+              ),
+            ],
           ),
+          const Spacer(),
         ],
       ),
     );

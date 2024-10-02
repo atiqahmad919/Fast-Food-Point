@@ -70,18 +70,18 @@ class RestCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(15.0),
       ),
       elevation: 5,
-      margin: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
       child: Column(
         // mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           ClipRRect(
-            borderRadius: BorderRadius.only(
+            borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(15.0),
               topRight: Radius.circular(15.0),
             ),
             child: Image.asset(
-              imagePath, // Make sure to add your image to assets and update the path
+              imagePath,
               fit: BoxFit.cover,
             ),
           ),
@@ -89,7 +89,7 @@ class RestCard extends StatelessWidget {
             padding: const EdgeInsets.only(top: 10.0, left: 10),
             child: Text(
               cardTitle,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),
